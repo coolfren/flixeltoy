@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="./favicon.png">
+    <title>FlixelToy</title>
+    <script type="text/javascript" src="./FlxProject.js"></script>
+	
+	<script>
+		window.addEventListener ("touchmove", function (event) { event.preventDefault (); }, { capture: false, passive: false });
+		if (typeof window.devicePixelRatio != 'undefined' && window.devicePixelRatio > 2) {
+			var meta = document.getElementById ("viewport");
+			meta.setAttribute ('content', 'width=device-width, initial-scale=' + (2 / window.devicePixelRatio) + ', user-scalable=no');
+		}
+	</script>
+	
+	<style>
+		html,body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+		#shadercode {
+			float: right;
+			margin-right: 250px;
+			margin-top: 20px;
+		}
+		#shaderbtn {
+			float: right;
+			margin-right: 250px;
+		}
+		#openfl-content { 
+			background: grey; 
+			width: 640px; 
+			height: 480px; 
+			margin-left: 20px;
+			margin-top: 20px;
+			border-style: dotted;
+			border-color:black;
+		}
+		@font-face {
+			font-family: 'Nokia Cellphone FC Small';
+			src: url('flixel/fonts/nokiafc22.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'Monsterrat';
+			src: url('flixel/fonts/monsterrat.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+
+	</style>
+</head>
+<body>
+	<noscript>This webpage makes extensive use of JavaScript. Please enable JavaScript in your web browser to view this page.</noscript>
+	If errors in console, refresh page!
+	<textarea id="shadercode" cols="80" rows="28"></textarea>
+	<div id="openfl-content"></div> 
+	<div><button id="shaderbtn">Run Shader</button></div>
+	<script type="text/javascript">
+		lime.embed ("FlxProject", "openfl-content", 640, 480, { parameters: {} });
+	</script>
+</body>
+</html>
